@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    IMAGE     = aurea-demojervis:$BUILD_NUMBER
+    IMAGE     = "aurea-demojervis:$BUILD_NUMBER"
   }
   stages {
     stage('Build') {
