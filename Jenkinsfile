@@ -1,15 +1,12 @@
 pipeline {
   agent any
+  environment {
+    IMAGE     = aurea-demojervis:$BUILD_NUMBER
+  }
   stages {
     stage('Build') {
       steps {
-        sh '''export IMAGE="aurea-demojervis:$BUILD_NUMBER"
-docker build . -t $IMAGE'''
-      }
-    }
-    stage('Deploy') {
-      steps {
-        sh 'docker push $IMAGE'
+        sh 'docker build . -t $IMAGE'
       }
     }
   }
