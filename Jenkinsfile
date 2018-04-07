@@ -9,6 +9,6 @@ pipeline {
   }
   environment {
     IMAGE = "aurea-demojervis:$BUILD_NUMBER"
-    DOCKER_LOGIN = 'credentials("DOCKER_LOGIN")'
+    DOCKER_LOGIN = credentials("DOCKER_LOGIN")
   }
 }
