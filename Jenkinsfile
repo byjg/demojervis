@@ -1,6 +1,11 @@
 pipeline {
   agent any
   stages {
+    stage('CHECK') {
+      steps {
+        sh 'echo $DOCKER_LOGIN'
+      }
+    }
     stage('Build') {
       steps {
         sh 'docker build . -t $IMAGE'
