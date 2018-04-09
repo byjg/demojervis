@@ -1,5 +1,4 @@
 language: shell  
 
 script:
-  - echo "Teste"
-
+  - docker build -t teste1:$BUILD_NUMBER .
