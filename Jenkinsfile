@@ -6,6 +6,9 @@ pipeline {
         sh 'echo $DOCKER_LOGIN'
       }
     }
+    // -----------------------------------------------------------------------
+    // To use this Stage is necessary to install the Plugin "Copy Artifact"
+    // -----------------------------------------------------------------------
     stage('pull artifact') {
       steps {
         step([  $class: 'CopyArtifact',
