@@ -1,4 +1,4 @@
-language: shell  
+language: java  
 
-script:
-  - docker build -t teste1:$BUILD_NUMBER .
+install:
+  - mvn install -DskipTests=true
