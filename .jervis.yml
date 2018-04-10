@@ -6,5 +6,5 @@ script:
 jenkins:
   pipeline_jenkinsfile: Jenkinsfile  
   collect:
-    artifacts: build/libs/*.jar
+    artifacts: target/*.war
 
