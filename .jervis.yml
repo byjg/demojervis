@@ -1,8 +1,10 @@
 language: java  
 
-install:
+script:
   - mvn install -DskipTests=true
 
 jenkins:
-  collect: {}
-  
+  pipeline_jenkinsfile: Jenkinsfile  
+  collect:
+    artifacts: build/libs/*.jar
+
