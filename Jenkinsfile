@@ -6,6 +6,17 @@ pipeline {
         sh 'echo $DOCKER_LOGIN'
       }
     }
+    stage('pull artifact') {
+      steps {
+        step([  $class: 'CopyArtifact',
+                filter: 'hello-world-war-1.0.0.war',
+                fingerprintArtifacts: true,
+                projectName: '${JOB_NAME}',
+                selector: [$class: 'SpecificBuildSelector', buildNumber: '${BUILD_NUMBER}']
+        ])
+        ls -la hello-world-war-1.0.0.war
+      }
+    }
     stage('Build') {
       steps {
         sh 'docker build . -t $IMAGE'
