@@ -14,7 +14,7 @@ pipeline {
                 projectName: '${JOB_NAME}',
                 selector: [$class: 'SpecificBuildSelector', buildNumber: '${BUILD_NUMBER}']
         ])
-        ls -la hello-world-war-1.0.0.war
+        sh 'ls -la hello-world-war-1.0.0.war'
       }
     }
     stage('Build') {
