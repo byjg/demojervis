@@ -9,15 +9,21 @@ pipeline {
     // -----------------------------------------------------------------------
     // To use this Stage is necessary to install the Plugin "Copy Artifact"
     // -----------------------------------------------------------------------
-    stage('pull artifact') {
+    // stage('pull artifact') {
+    //   steps {
+    //     step([  $class: 'CopyArtifact',
+    //             filter: 'hello-world-war-1.0.0.war',
+    //             fingerprintArtifacts: true,
+    //             projectName: '${JOB_NAME}',
+    //             selector: [$class: 'SpecificBuildSelector', buildNumber: '${BUILD_NUMBER}']
+    //     ])
+    //     sh 'ls -la hello-world-war-1.0.0.war'
+    //   }
+    // }
+    stage('Simulated deploy') {
       steps {
-        step([  $class: 'CopyArtifact',
-                filter: 'hello-world-war-1.0.0.war',
-                fingerprintArtifacts: true,
-                projectName: '${JOB_NAME}',
-                selector: [$class: 'SpecificBuildSelector', buildNumber: '${BUILD_NUMBER}']
-        ])
-        sh 'ls -la hello-world-war-1.0.0.war'
+          unstash 'artifacts'
+          sh 'find . -type f'
       }
     }
     stage('Build') {
