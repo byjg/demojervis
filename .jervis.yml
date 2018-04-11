@@ -9,8 +9,5 @@ cache:
 
 jenkins:
   pipeline_jenkinsfile: Jenkinsfile
-  stash:
-    - name: artifacts
-      includes: target/*.war 
   collect:
     artifacts: target/*.war
