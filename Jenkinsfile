@@ -23,8 +23,8 @@ pipeline {
     stage('Simulated deploy') {
       steps {
           sh 'find . -type f'
-          unstash 'artifacts'
-          sh 'find . -type f'
+    //      unstash 'artifacts'
+    //      sh 'find . -type f'
       }
     }
     stage('Build') {
