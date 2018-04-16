@@ -8,6 +8,8 @@ language: shell
 before_install:
   - apt install -y libsaxon-java apt-transport-https
   - echo test again 
+  - mkdir -p build
+  - touch build/teste.log
 
 install:
   - echo "this is installation part"
@@ -43,7 +45,7 @@ branches:
     
 jenkins:
   platform: docker
-  os: kerio
+  os: standard
   stability: stable
   sudo: sudo
   pipeline_jenkinsfile: assets/Jenkinsfile
