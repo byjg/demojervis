@@ -1,13 +1,53 @@
-language: java  
+#######################
+# Aurea Central Jervis
+#######################
+# User guide and documentation can be found at: https://github.com/trilogy-group/central-jervis
+# This project is based on https://github.com/samrocketman/jervis
 
-script:
-  - mvn install -DskipTests=true
-  
-cache:
-  directories:
-    - ${HOME}/.m2
+language: shell
+before_install:
+  - apt install -y libsaxon-java apt-transport-https
+  - echo test again 
 
+install:
+  - echo "this is installation part"
+  - echo "this is another installation print"
+
+env:
+ - Test1="test"
+
+before_script:
+  - echo "this is before script section"
+  - echo "it will contain steps executed before the script section starts"
+
+script: 
+  - echo "Hello World."
+  - echo "hello world again"
+
+after_success:
+  - echo "yaaaaaay succeeded .. everything is working fine now "
+  - echo "the job now is going to run the jenkins job pipeline "
+
+after_failure:
+  - echo "Sorry the job is failed .. please check the reason"
+  - echo "Jenkins pipeline will not be triggered"
+
+after_script:
+  - echo "after script section"
+  - echo "after script section again"
+
+branches:
+  only:
+    - develop
+    - master
+    
 jenkins:
-  pipeline_jenkinsfile: Jenkinsfile
+  platform: docker
+  os: kerio
+  stability: stable
+  sudo: sudo
+  pipeline_jenkinsfile: assets/Jenkinsfile
   collect:
-    artifacts: target/*.war
+    collect:
+      artifacts: build/*.log
+      
