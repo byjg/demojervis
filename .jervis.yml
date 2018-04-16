@@ -45,8 +45,8 @@ branches:
     
 jenkins:
   platform: docker
-  os: standard
-  stability: stable
+#  os: standard
+#  stability: stable
   sudo: sudo
   pipeline_jenkinsfile: assets/Jenkinsfile
   collect:
