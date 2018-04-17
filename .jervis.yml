@@ -6,8 +6,8 @@
 
 language: shell
 before_install:
-  - apt update
-  - apt install -y libsaxon-java apt-transport-https
+  - sudo apt update
+  - sudo DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends vim
   - echo test again 
   - mkdir -p build
   - touch build/teste.log
