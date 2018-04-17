@@ -29,7 +29,7 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh 'docker build . -t $IMAGE'
+        sh 'echo BUILD'
       }
     }
   }
