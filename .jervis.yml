@@ -6,6 +6,7 @@
 
 language: shell
 before_install:
+  - apt update
   - apt install -y libsaxon-java apt-transport-https
   - echo test again 
   - mkdir -p build
