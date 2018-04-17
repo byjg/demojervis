@@ -4,7 +4,11 @@
 # User guide and documentation can be found at: https://github.com/trilogy-group/central-jervis
 # This project is based on https://github.com/samrocketman/jervis
 
-language: shell
+language: java
+
+jdk:
+  - oraclejdk8
+
 before_install:
   - sudo apt update
   - sudo DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends vim
