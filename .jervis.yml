@@ -49,7 +49,7 @@ jenkins:
 #  os: standard
 #  stability: stable
   sudo: sudo
-  pipeline_jenkinsfile: assets/Jenkinsfile
+#  pipeline_jenkinsfile: Jenkinsfile
   collect:
     collect:
       artifacts: build/*.log
