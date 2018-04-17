@@ -46,10 +46,11 @@ branches:
     
 jenkins:
   platform: docker
+#  # lifecycles_standard_stable.json
 #  os: standard
 #  stability: stable
   sudo: sudo
-#  pipeline_jenkinsfile: Jenkinsfile
+  pipeline_jenkinsfile: Jenkinsfile
   collect:
     collect:
       artifacts: build/*.log
